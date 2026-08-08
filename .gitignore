@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.DS_Store
+runs/
+outputs/
+checkpoints/
+data/raw/
+data/processed/
+*.pt
+*.ckpt
+*.npz

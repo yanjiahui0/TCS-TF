@@ -1,0 +1,18 @@
+# Fill with the exact repositories/commits used for a submission-quality reproduction.
+# The manuscript requires these provenance fields; it does not expose all of them.
+baselines:
+  PatchTST:
+    repository: "FILL_ME"
+    commit: "FILL_ME"
+    entrypoint: "FILL_ME"
+    config_path: "FILL_ME"
+  TimeGrad:
+    repository: "FILL_ME"
+    commit: "FILL_ME"
+    entrypoint: "FILL_ME"
+    config_path: "FILL_ME"
+  Gen-DFL:
+    repository: "FILL_ME"
+    commit: "FILL_ME"
+    entrypoint: "FILL_ME"
+    config_path: "FILL_ME"

@@ -1,0 +1,46 @@
+# Engineering defaults filled in because the manuscript does not uniquely specify
+# every network width/optimizer hyperparameter. These values MUST NOT be described
+# as the original locked experimental settings.
+seed: 7
+device: auto
+model:
+  x_dim: 5
+  y_channels: 1
+  horizon: 24
+  known_stats: [mean, final_cumsum, max, persistence]
+  learned_bank_width: 16
+  deployed_dim: 8
+  representation_radius: 6.0
+  encoder_hidden: [128, 128]
+  decoder_hidden: [192, 192]
+  history_hidden: [128, 128]
+  mixture_components: 4
+  low_rank: 2
+  min_scale: 0.001
+training:
+  batch_size: 128
+  lr_quotient: 0.001
+  lr_generator: 0.001
+  weight_decay: 0.00001
+  pretrain_epochs: 15
+  generator_epochs: 15
+  joint_epochs: 20
+  samples_per_context: 8
+  witnesses_per_context: 8
+  refresh_every: 5
+  tau_factor: 0.02
+  tau_dipm: 0.02
+  gate_temperature_start: 2.0
+  gate_temperature_end: 0.35
+  lambda_fac: 1.0
+  lambda_prob: 1.0
+  lambda_dec: 1.0
+  lambda_gate: 0.001
+  lambda_lip: 0.001
+  lip_target: 2.0
+  grad_clip: 5.0
+  early_stopping_patience: 8
+evaluation:
+  scenarios: 500
+  epsilon_cost: 0.000001
+  bootstrap_reps: 1000

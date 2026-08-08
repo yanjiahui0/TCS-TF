@@ -1,0 +1,46 @@
+seed: 7
+device: cpu
+data:
+  suite: s2
+  train: 512
+  val: 128
+  recal: 128
+  test: 256
+  horizon: 24
+  x_dim: 4
+model:
+  known_stats: [mean, final_cumsum, max, persistence]
+  learned_bank_width: 12
+  deployed_dim: 8
+  representation_radius: 6.0
+  encoder_hidden: [64, 64]
+  decoder_hidden: [96, 96]
+  history_hidden: [64, 64]
+  mixture_components: 3
+  low_rank: 2
+  min_scale: 0.001
+training:
+  batch_size: 64
+  lr_quotient: 0.001
+  lr_generator: 0.001
+  weight_decay: 0.00001
+  pretrain_epochs: 2
+  generator_epochs: 2
+  joint_epochs: 2
+  samples_per_context: 4
+  witnesses_per_context: 5
+  refresh_every: 2
+  tau_factor: 0.05
+  tau_dipm: 0.05
+  gate_temperature_start: 1.5
+  gate_temperature_end: 0.5
+  lambda_fac: 1.0
+  lambda_prob: 0.5
+  lambda_dec: 0.5
+  lambda_gate: 0.001
+  lambda_lip: 0.0001
+  lip_target: 3.0
+  grad_clip: 5.0
+evaluation:
+  scenarios: 64
+  epsilon_cost: 0.000001

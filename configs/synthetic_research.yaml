@@ -1,0 +1,52 @@
+# Research-scale template mirroring the manuscript's protocol structure.
+# Exact locked settings require the authors' immutable configuration archive.
+seed: 7
+device: auto
+data:
+  suite: s2
+  train: 5000
+  val: 1500
+  recal: 1000
+  test: 5000
+  generators: 20
+  horizon: 24
+  x_dim: 8
+model:
+  known_stats: [mean, final_cumsum, max, persistence]
+  learned_bank_width: 16
+  deployed_dim: 8
+  representation_radius: 6.0
+  encoder_hidden: [256, 256]
+  decoder_hidden: [256, 256, 128]
+  history_hidden: [256, 256]
+  mixture_components: 5
+  low_rank: 2
+  min_scale: 0.001
+training:
+  batch_size: 256
+  lr_quotient: 0.0005
+  lr_generator: 0.0005
+  weight_decay: 0.00001
+  pretrain_epochs: 60
+  generator_epochs: 60
+  joint_epochs: 100
+  samples_per_context: 16
+  witnesses_per_context: 16
+  refresh_every: 5
+  tau_factor: 0.02
+  tau_dipm: 0.02
+  gate_temperature_start: 2.0
+  gate_temperature_end: 0.25
+  lambda_fac: 1.0
+  lambda_prob: 1.0
+  lambda_dec: 1.0
+  lambda_gate: 0.001
+  lambda_lip: 0.001
+  lip_target: 2.0
+  grad_clip: 5.0
+evaluation:
+  scenarios: 500
+  scenario_sweep: [10, 25, 50, 100, 250, 500, 1000]
+  dimension_sweep: [1, 2, 4, 8, 16, 32]
+  alpha_sweep: [0.01, 0.05, 0.10, 0.20]
+  epsilon_cost: 0.000001

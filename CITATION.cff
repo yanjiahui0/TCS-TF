@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the TCS-TF paper."
+title: "TCS-TF research code"
+version: 0.1.0
+date-released: 2026-08-08
+preferred-citation:
+  type: article
+  title: "Task-Class-Sufficient Trajectory Forecasting for Path-Dependent Decisions: Minimal Complete-Risk Representations, Uniform Regret, and Finite-Sample Guarantees"
+  authors:
+    - family-names: Yan
+      given-names: Jiahui
+    - family-names: Xun
+      given-names: Yaling
